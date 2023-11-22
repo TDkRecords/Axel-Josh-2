@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1 class="text-center mb-5 mt-2 text-info">Inicia sesion para ver el contenido premium</h1>
+<div class="container container-fluid bg-black p-4 rounded-4 mb-5">
+    <form method="post">
+        {% csrf_token %}
+        <p class="h5 text-light-emphasis text-sm">Nombre de Usuario: </p>
+        <input type="text" name="username" placeholder="Usuario" class="form-control form-control-lg mb-3" autocomplete="off">
+        <p class="h5 text-light-emphasis text-sm">Contraseña: </p>
+        <input type="password" name="password" placeholder="Contraseña" class="form-control form-control-lg mb-3"  autocomplete="off">
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Acceder</button>
+        </div>
+    </form>
+</div>
+
+
+<div class="accordion accordion-flush border rounded-top-4" id="accordionFlushExample">
+    <div class="accordion-item rounded-top-4">
+        <h2 class="accordion-header rounded-top-4">
+            <button class="accordion-button collapsed bg-black text-white-50 rounded-top-4" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                ¿Por qué ser un usuario vip?
+            </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body bg-dark text-light">Los usuarios Vip obtienen una serie de <code>Privilegios</code> que no se muestran en el apartado de Proyectos o en el blog.</div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-black text-white-50" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                ¿Qué Beneficios tiene una cuenta Premium?
+            </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body bg-dark text-light">Al ser un usuario vip tu cuenta pasa de ser una cuenta standart a una cuenta <code>Premium</code> por lo que obtienes beneficios que te permiten <code>Descagar</code> los archivos e instrucciones que aparecen en el apartado de Proyectos</div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-black text-white-50" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                ¿Cómo adquirir una cuenta Premium?
+            </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body bg-dark text-light">Si quieres subir tu rango y 
+                <code>Adquirir</code> tu cuenta premium, lo puedes hacer en 3 sencillos pasos.
+                <ul>
+                    <li>
+                        1. Dirigete a una de mis redes sociales y solicita tu cuenta premium
+                    </li>
+                    <li>
+                        2. Haz el pago por tu cuenta premium a Paypal o Nequi - 5$/month
+                    </li>
+                    <li>
+                        3. llena el formulario que se te otorgará para escribir tu nombre de usuario, correo, contraseña, etc.
+                    </li>
+                </ul>
+                y listo! serás subido de nivel y podras tener Full Acceso a todos los proyectos!
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

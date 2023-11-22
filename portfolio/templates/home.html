@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% load static%}
+
+<header class="row bg_black">
+    <div class="col-md-4 my-auto">
+        <img  class="img-fluid" src={% static 'portfolio/Portfolio_Image_Profile.jpg' %}>
+    </div>
+
+    <div class="col-md-8 my-auto">
+        <h1 class="text-info">Axel Josh</h1>
+        <h4>Desarrollador Fullstack, Músico y Productor Musical</h4>
+        <p>Soy Axel y este es mi website oficial. Soy desarrollador, trabajo con HTML, CSS - Bootstrap, y principalmente Python - Django, También soy productor musical desde 2017 y músico desde 2018, a diferencia de mis estudios de programación que los inicié en 2021, mi carrera como Artista y Programador Fullstack los llevo a cabo de forma empírica en su mayor parte, por lo que si estás leyendo esto, es una gran parte de mi progreso.
+        </p>
+    </div>
+
+</header>
+
+<div class="row my-4 text-center">
+    <h3>Mis Proyectos</h3>
+    <p>Aqui una muestra de algunos proyectos desde que empecé como desarrollador y con mi marca de música <strong>"TDk Records"</strong>.
+    </p>
+    
+    {% for project in projects%}
+
+    <div class="col-md-4 p-4">
+        <div class="card bg_black card_project h-100">
+            <img src="{{project.image.url}}" alt="{{project.title}}" class="card-img-top">
+            <div class="card-body">
+                <h2 class="text-info">{{project.title}}</h2>
+                <p class="text-light">{{project.description}}</p>
+                <p>{{post.date_portfolio|date:'M d Y'}}</p>
+                {% if project.url %}
+                    <a href="{{project.url}}" class="btn btn-primary rounded-5 btn-sm" target="_blank">Ver Proyecto</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+
+    {% endblock %}
+
+</div>

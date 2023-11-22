@@ -1,0 +1,29 @@
+.footer_style {
+    text-align: center;
+    padding-top: 25px;
+}
+
+.social_media {
+    font-size: 20px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 150ms ease-in;
+    padding-bottom: 15px;
+}
+
+.social_media:hover {
+    text-decoration: underline;
+    color: rgb(0, 153, 255);
+    font-size: 22px;
+}
+
+.pie_pagina {
+    font-size: 17px;
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 576px) {
+    .social_media {
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,12 @@
+body {
+    background-color: #090909;
+}
+
+.bg_black {
+    background-color: #000;
+}
+
+.seguidores-text-icon{
+    display: none;
+    opacity: 0;
+}

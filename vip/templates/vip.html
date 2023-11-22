@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}
+  {% load static %}
+  <div class="row my-4">
+    <h1 class="text-center text-light tituloResponsivo m-0 p-0">Bienvenido al contenido premium</h1>
+
+    {% for vip_dict in vip_dict %}
+      <div class="col-md-4 p-4">
+        <div class="card bg_black card_project h-100">
+          <img src="{{ vip_dict.image.url }}" alt="{{ vip_dict.title }}" class="card-img-top" />
+          <div class="card-body">
+            <h2 class="text-info">{{ vip_dict.title|upper }}</h2>
+            <p class="text-light">{{ vip_dict.description|safe }}</p>
+            <div>
+              <a href="{{ vip_dict.files.url }}" download="{{ vip_dict.files }}" class="btn btn-outline-primary d-flex justify-content-center align-items-center mb-2 textoResponsivo"><span class="button-text">Descargar Archivo</span></a>
+              <a href="{{ vip_dict.instructions.url }}" download="{{ vip_dict.instructions }}" class="btn btn-outline-success d-flex justify-content-center align-items-center textoResponsivo"><span class="button-text">Instrucciones</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

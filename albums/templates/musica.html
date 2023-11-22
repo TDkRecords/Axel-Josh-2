@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+<h1>Mi Música</h1>
+
+{% block content %}
+  <div class="container text-center w-100">
+    <div class="row w-100">
+      <div class="col-12 w-100">
+        <h2 class="text-info">Mi Música</h2>
+        <p class="justify-content-center text-sm">Este es un apartado donde está parte de mi historia musical pues he perdido muchos proyecto con el paso del tiempo...</p>
+      </div>
+    </div>
+    {% for singles in single %}
+      <div class="row">
+        <div class="container container-fluid col-12 pb-4 pt-4">
+          <span class="d-flex justify-content-center contenedorDeCanciones">
+            <h2 class="titulo_cancion">{{ singles.nombre }}</h2>
+            <p class="subtitulo_cancion">{{ singles.date_singles|date:'M d Y' }}</p>
+          </span>
+          <audio src="{{ singles.pista.url }}" controls preload="auto" class="audio_tamaño w-75"></audio>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <script>
+    // Obtener todos los elementos de audio en la página
+    const audioElements = document.querySelectorAll('.audio_tamaño')
+    
+    // Al hacer clic en cualquier elemento de audio
+    audioElements.forEach((audio) => {
+      audio.addEventListener('play', function () {
+        // Detener la reproducción de los demás audios
+        audioElements.forEach((otherAudio) => {
+          if (otherAudio !== audio) {
+            otherAudio.pause()
+          }
+        })
+      })
+    })
+  </script>
+{% endblock %}

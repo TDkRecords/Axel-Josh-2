@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top border-top-0 border-end-0 border-start-0 border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse w-100" id="navbarNav">
+        <ul class="navbar-nav ms-auto w-100">
+          <li class="nav-item d-flex justify-content-center w-100 m-0">
+            <span class="d-flex align-items-center">
+              <a class="nav-link active text-white-5 text-white-50">
+                <span class="seguidores-text-icon"></span>
+                <i class="fa-sharp fa-solid fa-user-plus"></i> Usuarios Vip({{ num_usuarios_en_grupo }})
+              </a>
+            </span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'blog:posts' %}">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'albums:musica' %}">Música</a>
+          </li>
+          {% if request.user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'vip' %}">Premium</a>
+            </li>
+            <li class="nav-item d-flex align-items-center justify-content-end">
+              <a class="btn btn-primary btn-sm" href="{% url 'logout' %}">Salir</a>
+            </li>
+          {% else %}
+            <li class="nav-item d-flex align-items-center justify-content-end">
+              <a class="btn btn-primary btn-sm" href="{% url 'vip' %}">Acceder</a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+</nav>

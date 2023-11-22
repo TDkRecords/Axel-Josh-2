@@ -1,0 +1,39 @@
+.cont_vip {
+    border: 1px solid white;
+}
+
+.img_vip {
+    display: flex;
+}
+
+.textoResponsivo {
+  padding: 10px 20px; /* Ajusta el espaciado según tus necesidades */
+}
+
+.button-text {
+  font-size: clamp(0.3em, 5vw, 1em);
+}
+
+.tituloResponsivo {
+    font-size: clamp(1.2em, 6vw, 2.6em);
+    text-shadow: 1px 1px 12px rgb(63, 158, 175);
+}
+
+/* Estilos para pantallas medianas y grandes */
+@media (min-width: 768px) {
+    .cont_vip {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .img_vip {
+        display: block;
+        width: 100%;
+    }
+
+    .card_text {
+        display: block;
+        width: 100%;
+    }
+}

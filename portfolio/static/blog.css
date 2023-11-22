@@ -1,0 +1,23 @@
+.post_img {
+    display: flex;
+}
+
+.contendor_post {
+    text-align: left;
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 576px) {
+    .post_img {   
+        flex-direction: column;
+        width: 100;
+    }
+
+    .post_img div {
+        width: 100;
+    }
+
+    .contendor_post {
+        width: 100%;
+    }
+}
